@@ -21,9 +21,6 @@ const caveat = Caveat({
 });
 
 export const metadata: Metadata = {
-  title: "Toon Studio | Animation Studio and Creative Agency in Sri Lanka",
-  description:
-    "Toon Studio is a Sri Lankan animation studio and creative agency specialising in animation, video production, creative design, comics and social media campaigns.",
   icons: {
     icon: "/TonStudioLogo.svg",
     apple: "/TonStudioLogo.svg",
