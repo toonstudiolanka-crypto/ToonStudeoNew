@@ -1,0 +1,192 @@
+{
+  "meta": {
+    "title": "Toon Studio | Animation Studio and Creative Agency in Sri Lanka",
+    "description": "Toon Studio is a Sri Lankan animation studio and creative agency specialising in animation, video production, creative design, comics and social media campaigns."
+  },
+  "hero": {
+    "eyebrow": "Welcome to Toon Studio — Est. 2018",
+    "titleLines": ["The Creative Awakening", "TOON STUDIO"],
+    "subtitle": "Sri Lanka's premium animation studio & creative agency — turning imagination into motion since 2018.",
+    "tags": ["Animation", "Video", "Design", "Comics", "Social"],
+    "mediaUrl": "https://www.youtube.com/watch?v=RqEpxYFDwYw",
+    "mediaType": "video"
+  },
+  "whoWeAre": {
+    "label": "( Who are we? )",
+    "headline": "We are a bunch of daydreamers gathered around to tell wonderful stories.",
+    "headlineParts": [
+      { "text": "We are a bunch of " },
+      { "text": "daydreamers", "color": "#FF4D2E" },
+      { "text": " gathered around to tell " },
+      { "text": "wonderful stories.", "color": "#FFC53D" }
+    ],
+    "description": "We are Sri Lanka's premium animation studio and creative agency — turning imagination into motion since 2018."
+  },
+  "clientLogos": {
+    "label": "Brands we've worked with",
+    "logos": [
+      { "id": "client-1", "name": "Partner 01", "imageUrl": "" },
+      { "id": "client-2", "name": "Partner 02", "imageUrl": "" },
+      { "id": "client-3", "name": "Partner 03", "imageUrl": "" },
+      { "id": "client-4", "name": "Partner 04", "imageUrl": "" },
+      { "id": "client-5", "name": "Partner 05", "imageUrl": "" },
+      { "id": "client-6", "name": "Partner 06", "imageUrl": "" },
+      { "id": "client-7", "name": "Partner 07", "imageUrl": "" },
+      { "id": "client-8", "name": "Partner 08", "imageUrl": "" },
+      { "id": "client-9", "name": "Partner 09", "imageUrl": "" },
+      { "id": "client-10", "name": "Partner 10", "imageUrl": "" }
+    ]
+  },
+  "featuredVideos": [
+    {
+      "id": "feat-1",
+      "title": "This is Toon Studio Animation!",
+      "category": "Digital Agency",
+      "thumbnailUrl": "",
+      "videoUrl": "https://www.youtube.com/watch?v=RqEpxYFDwYw"
+    },
+    {
+      "id": "feat-2",
+      "title": "Red for You | Short Movie",
+      "category": "Digital Agency",
+      "thumbnailUrl": "",
+      "videoUrl": "https://www.youtube.com/watch?v=h6oIsGB8Z94"
+    },
+    {
+      "id": "feat-3",
+      "title": "One Sri Lanka Dialogue",
+      "category": "Sinhala Animated",
+      "thumbnailUrl": "",
+      "videoUrl": "https://www.youtube.com/watch?v=K-ds6Q9Sfoc"
+    }
+  ],
+  "strength": {
+    "label": "Our strength",
+    "headline": "Think bold. Think big.",
+    "paragraphs": [
+      "Creativity is our major strength and passion. We love to think bold, think big, and think unique.",
+      "We are a bunch of storytellers with unique skill sets in every area of production.",
+      "Active in the industry since 2018, we are well-equipped with experience we bring to every future work."
+    ],
+    "quote": "We are here to help build brands and grow companies.",
+    "footer": "In the rapidly changing world of marketing communications, we find it necessary to stay current with the changes that affect our clients."
+  },
+  "services": [
+    {
+      "id": "svc-1",
+      "number": "01",
+      "accent": "#FF4D2E",
+      "title": "Animation Production",
+      "description": "Have you ever imagined something impossible to see in our physical realm? With animation we have the superpower of bringing anything to life. Our team is ready to make your dream come true.",
+      "imageUrl": "",
+      "theme": "dark"
+    },
+    {
+      "id": "svc-2",
+      "number": "02",
+      "accent": "#2F6BFF",
+      "title": "Video Production",
+      "description": "Through the lens we capture not just moments but emotions, carefully calculated to speak to an audience — igniting desire and passion through visuals.",
+      "imageUrl": "",
+      "theme": "dark-alt"
+    },
+    {
+      "id": "svc-3",
+      "number": "03",
+      "accent": "#15130F",
+      "title": "Creative Design",
+      "description": "One of the most compelling ways of telling stories. With our skilled graphic designers, we can take your brand to heights you haven't even imagined.",
+      "imageUrl": "",
+      "theme": "orange"
+    },
+    {
+      "id": "svc-4",
+      "number": "04",
+      "accent": "#FFC53D",
+      "title": "Comics",
+      "description": "Enjoy glimpses of a wonderful voyage through the inked lines of artists. Comics are a highly effective way to reach any audience — from children to adults.",
+      "imageUrl": "",
+      "theme": "blue"
+    },
+    {
+      "id": "svc-5",
+      "number": "05",
+      "accent": "#FFC53D",
+      "title": "Social Media Campaigns",
+      "description": "Strategists, writers, designers and content creators telling remarkable stories — building brand awareness and gaining more customers around your brand.",
+      "imageUrl": "",
+      "theme": "dark"
+    }
+  ],
+  "work": [
+    {
+      "id": "work-1",
+      "title": "Daily Deals — Black Friday",
+      "category": "Social Campaign",
+      "year": "2023",
+      "imageUrl": "",
+      "aspect": "4/5"
+    },
+    {
+      "id": "work-2",
+      "title": "Youth Voice Campaign",
+      "category": "Illustration",
+      "year": "2022",
+      "imageUrl": "",
+      "aspect": "1/1"
+    },
+    {
+      "id": "work-3",
+      "title": "Money Quest — Game Artwork",
+      "category": "Animation",
+      "year": "2021",
+      "imageUrl": "",
+      "aspect": "16/10"
+    },
+    {
+      "id": "work-4",
+      "title": "Hassle-Free — Valentine's",
+      "category": "Creative Design",
+      "year": "2023",
+      "imageUrl": "",
+      "aspect": "3/4"
+    },
+    {
+      "id": "work-5",
+      "title": "AnimEd — Educational Artwork",
+      "category": "Comics",
+      "year": "2022",
+      "imageUrl": "",
+      "aspect": "5/4"
+    }
+  ],
+  "founders": [
+    {
+      "id": "found-1",
+      "name": "Harith Kumarasinghe",
+      "bio": "A multi-talented entrepreneur, filmmaker, animator, comic artist, writer and creative director with 10+ years in the creative industry. In 2018 he founded Toon Studio with his brother — a dreamer of a better world.",
+      "imageUrl": ""
+    },
+    {
+      "id": "found-2",
+      "name": "Chamith Kumarasinghe",
+      "bio": "A well-experienced producer, cinematographer, marketing strategist and creative director with 10+ years in the industry. His expertise in cinematography is showcased throughout Toon Studio's video production unit.",
+      "imageUrl": ""
+    }
+  ],
+  "contact": {
+    "email": "info@toonstudiolk.com",
+    "phones": ["071 10 82826", "074 258 3999"],
+    "social": [
+      { "label": "Facebook", "url": "#" },
+      { "label": "Instagram", "url": "#" },
+      { "label": "YouTube", "url": "https://www.youtube.com/@toonstudio" },
+      { "label": "WhatsApp", "url": "#" }
+    ],
+    "youtubeUrl": "https://www.youtube.com/@toonstudio"
+  },
+  "footer": {
+    "copyright": "All rights reserved | Toon Studio (Pvt) Ltd",
+    "location": "Boralesgamuwa, Sri Lanka"
+  }
+}
