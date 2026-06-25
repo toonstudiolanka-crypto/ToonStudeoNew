@@ -25,16 +25,16 @@
   "clientLogos": {
     "label": "Brands we've worked with",
     "logos": [
-      { "id": "client-1", "name": "Partner 01", "imageUrl": "" },
-      { "id": "client-2", "name": "Partner 02", "imageUrl": "" },
-      { "id": "client-3", "name": "Partner 03", "imageUrl": "" },
-      { "id": "client-4", "name": "Partner 04", "imageUrl": "" },
-      { "id": "client-5", "name": "Partner 05", "imageUrl": "" },
-      { "id": "client-6", "name": "Partner 06", "imageUrl": "" },
-      { "id": "client-7", "name": "Partner 07", "imageUrl": "" },
-      { "id": "client-8", "name": "Partner 08", "imageUrl": "" },
-      { "id": "client-9", "name": "Partner 09", "imageUrl": "" },
-      { "id": "client-10", "name": "Partner 10", "imageUrl": "" }
+      { "id": "client-1", "name": "Fusion", "imageUrl": "/Clint%20Logo/fusion.webp" },
+      { "id": "client-2", "name": "Google", "imageUrl": "/Clint%20Logo/google.webp" },
+      { "id": "client-3", "name": "GU", "imageUrl": "/Clint%20Logo/GU%20logo.webp" },
+      { "id": "client-4", "name": "eBuilder", "imageUrl": "/Clint%20Logo/eBuilder-logo%20(1).webp" },
+      { "id": "client-5", "name": "Peace ECPAT Sri Lanka", "imageUrl": "/Clint%20Logo/Peace%20Ecpat%20Sri%20lanka.webp" },
+      { "id": "client-6", "name": "eJustice", "imageUrl": "/Clint%20Logo/ejustice_logo-final.webp" },
+      { "id": "client-7", "name": "Sarvoo", "imageUrl": "/Clint%20Logo/Sarvoo.webp" },
+      { "id": "client-8", "name": "NIBM", "imageUrl": "/Clint%20Logo/National_Institute_of_Business_Management_Logo.webp" },
+      { "id": "client-9", "name": "Uman", "imageUrl": "/Clint%20Logo/uman%20logo.webp" },
+      { "id": "client-10", "name": "Equality Leaders", "imageUrl": "/Clint%20Logo/EqualityLeadersLogo_RGB_white%20(1).webp" }
     ]
   },
   "featuredVideos": [

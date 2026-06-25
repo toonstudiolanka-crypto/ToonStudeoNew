@@ -16,12 +16,11 @@ function LogoItem({ logo }: { logo: ClientLogo }) {
         alt={logo.name}
         data-client-logo
         style={{
-          height: 44,
+          height: 52,
           width: "auto",
-          maxWidth: 160,
+          maxWidth: 180,
           objectFit: "contain",
-          filter: "brightness(0) invert(1)",
-          opacity: 0.72,
+          opacity: 0.92,
         }}
       />
     );
