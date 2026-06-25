@@ -23,8 +23,11 @@ const caveat = Caveat({
 
 export const metadata: Metadata = {
   icons: {
-    icon: "/TonStudioLogo.svg",
-    apple: "/TonStudioLogo.svg",
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon.png", type: "image/png", sizes: "32x32" },
+    ],
+    apple: "/apple-touch-icon.png",
   },
 };
 
