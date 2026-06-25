@@ -7,7 +7,7 @@
     "eyebrow": "Welcome to Toon Studio — Est. 2018",
     "titleLines": ["The Creative Awakening", "TOON STUDIO"],
     "subtitle": "Sri Lanka's premium animation studio & creative agency — turning imagination into motion since 2018.",
-    "tags": ["Animation", "Video", "Design", "Comics", "Social"],
+    "tags": ["Animation", "Video", "Design", "Social", "AI", "Web"],
     "mediaUrl": "https://www.youtube.com/watch?v=RqEpxYFDwYw",
     "mediaType": "video"
   },
@@ -77,8 +77,8 @@
       "number": "01",
       "accent": "#FF4D2E",
       "title": "Animation Production",
-      "description": "Have you ever imagined something impossible to see in our physical realm? With animation we have the superpower of bringing anything to life. Our team is ready to make your dream come true.",
-      "imageUrl": "",
+      "description": "Breathe life into your imagination with pure, handcrafted artistry. Our animation production is 100% human-driven, relying on the authentic talent of our artists to build bespoke 2D and 3D worlds from the ground up. We intentionally bypass AI in this process, ensuring that every frame, fluid movement, and character design pulses with genuine, uncompromised artistic soul.",
+      "imageUrl": "/Service/Animation%20Production.webp",
       "theme": "dark"
     },
     {
@@ -86,36 +86,45 @@
       "number": "02",
       "accent": "#2F6BFF",
       "title": "Video Production",
-      "description": "Through the lens we capture not just moments but emotions, carefully calculated to speak to an audience — igniting desire and passion through visuals.",
-      "imageUrl": "",
+      "description": "Capture the essence of your brand through cinematic storytelling. From the first spark of an idea to the final cut, our production unit pairs high-end cinematography with compelling narratives. We do more than just record footage—we awaken your brand's reality through the lens, delivering visually striking, cinematic content that leaves a lasting impact on your audience.",
+      "imageUrl": "/Service/Video%20Production.webp",
       "theme": "dark-alt"
     },
     {
       "id": "svc-3",
       "number": "03",
       "accent": "#15130F",
-      "title": "Creative Design",
-      "description": "One of the most compelling ways of telling stories. With our skilled graphic designers, we can take your brand to heights you haven't even imagined.",
-      "imageUrl": "",
+      "title": "Creative\nDesign",
+      "description": "Transform abstract concepts into striking visual masterpieces. Encompassing dynamic graphic design, immersive digital art, and engaging comic illustrations, our design team builds the definitive visual language for your brand. We craft bespoke, eye-catching assets designed to spark curiosity, communicate your core message, and drive a true creative awakening.",
+      "imageUrl": "/Service/Creative%20Design.webp",
       "theme": "orange"
     },
     {
       "id": "svc-4",
       "number": "04",
       "accent": "#FFC53D",
-      "title": "Comics",
-      "description": "Enjoy glimpses of a wonderful voyage through the inked lines of artists. Comics are a highly effective way to reach any audience — from children to adults.",
-      "imageUrl": "",
+      "title": "Social\nMedia\nManagement",
+      "description": "Turn passive scrolling into a loyal, engaged community. We engineer strategic, data-driven social media campaigns paired with scroll-stopping, tailor-made content. By actively managing your complete digital footprint, we amplify your brand's unique voice, optimize your online reach, and cultivate meaningful, lasting connections across every platform.",
+      "imageUrl": "/Service/Social%20Media%20Management.webp",
       "theme": "blue"
     },
     {
       "id": "svc-5",
       "number": "05",
       "accent": "#FFC53D",
-      "title": "Social Media Campaigns",
-      "description": "Strategists, writers, designers and content creators telling remarkable stories — building brand awareness and gaining more customers around your brand.",
-      "imageUrl": "",
+      "title": "Next-Gen AI\nCommercials",
+      "description": "Step into the frontier of digital advertising. Leveraging cutting-edge artificial intelligence, we produce high-fidelity, highly targeted commercials that push the boundaries of traditional media. This innovative, tech-forward approach unlocks boundless visual possibilities, allowing us to deliver stunning promotional campaigns and commercial assets at the speed of modern business.",
+      "imageUrl": "/Service/Next-Gen%20AI%20Commercials.webp",
       "theme": "dark"
+    },
+    {
+      "id": "svc-6",
+      "number": "06",
+      "accent": "#2F6BFF",
+      "title": "Web & System\nDevelopment",
+      "description": "Engineer digital experiences that perform as beautifully as they look. From responsive websites and web applications to tailored business systems, our development team architects scalable, secure solutions built around your workflows. We combine clean code, intuitive UX, and rigorous testing to launch platforms that grow with your brand and keep your operations running seamlessly.",
+      "imageUrl": "/Service/Web-And-Systam-Devalopmant.webp",
+      "theme": "dark-alt"
     }
   ],
   "work": [

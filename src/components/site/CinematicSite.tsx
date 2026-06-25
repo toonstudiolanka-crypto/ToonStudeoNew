@@ -226,10 +226,10 @@ export function CinematicSite({ content }: Props) {
                   <div data-svc-body style={{ padding: "clamp(28px,4vw,56px)", display: "flex", flexDirection: "column", justifyContent: "space-between", gap: 24 }}>
                     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                       <span style={{ fontSize: 13, letterSpacing: ".22em", color: svc.accent }}>{svc.number}</span>
-                      <span data-svc-label style={{ fontSize: 12, letterSpacing: ".2em", textTransform: "uppercase", color: "rgba(255,255,255,.4)" }}>Service</span>
+                      <span data-svc-label style={{ fontSize: 12, letterSpacing: ".2em", textTransform: "uppercase", color: svc.theme === "orange" ? "rgba(21,19,15,.45)" : "rgba(255,255,255,.4)" }}>Service</span>
                     </div>
                     <div>
-                      <h3 data-svc-title style={{ margin: "0 0 18px", fontFamily: "var(--font-bricolage)", fontWeight: 800, fontSize: "clamp(30px,3.6vw,54px)", lineHeight: 0.96, letterSpacing: "-.02em", whiteSpace: "pre-line" }}>{svc.title.replace(" ", "\n")}</h3>
+                      <h3 data-svc-title style={{ margin: "0 0 18px", fontFamily: "var(--font-bricolage)", fontWeight: 800, fontSize: "clamp(30px,3.6vw,54px)", lineHeight: 0.96, letterSpacing: "-.02em", whiteSpace: "pre-line" }}>{svc.title}</h3>
                       <p data-svc-desc style={{ margin: 0, fontSize: "clamp(15px,1.4vw,18px)", lineHeight: 1.55, color: theme.sub, maxWidth: "42ch" }}>{svc.description}</p>
                     </div>
                   </div>
