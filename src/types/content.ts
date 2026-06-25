@@ -50,6 +50,17 @@ export type ClientLogo = {
   imageUrl: string;
 };
 
+export type PressFeature = {
+  id: string;
+  kind: "newspaper" | "article";
+  source: string;
+  title: string;
+  byline?: string;
+  excerpt?: string;
+  imageUrl: string;
+  articleUrl?: string;
+};
+
 export type SiteContent = {
   meta: {
     title: string;
@@ -74,6 +85,12 @@ export type SiteContent = {
     logos: ClientLogo[];
   };
   featuredVideos: FeaturedVideo[];
+  featuredPage: {
+    eyebrow: string;
+    title: string;
+    subtitle: string;
+    pressFeatures: PressFeature[];
+  };
   strength: {
     label: string;
     headline: string;

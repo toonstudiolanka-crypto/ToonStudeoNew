@@ -62,13 +62,14 @@ export function FeaturedVideosSection({ videos }: Props) {
                 Featured videos
               </div>
               <h2
+                data-display-heading
                 style={{
                   margin: 0,
                   fontFamily: "var(--font-bricolage)",
                   fontWeight: 800,
                   fontSize: "clamp(30px,4.6vw,68px)",
                   letterSpacing: "-.02em",
-                  lineHeight: 0.95,
+                  lineHeight: 1,
                 }}
               >
                 Stories in motion

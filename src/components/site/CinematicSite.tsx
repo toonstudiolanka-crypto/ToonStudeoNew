@@ -54,7 +54,7 @@ export function CinematicSite({ content }: Props) {
           </div>
 
           {/* Main content */}
-          <div data-hero-content style={{ position: "relative", zIndex: 3, padding: "0 clamp(20px,5vw,72px)", width: "100%", maxWidth: 1400 }}>
+          <div data-hero-content style={{ position: "relative", zIndex: 3, padding: "0 clamp(20px,5vw,72px)", paddingBottom: "clamp(20px,4vh,48px)", width: "100%", maxWidth: 1400, overflow: "visible" }}>
 
             {/* Eyebrow */}
             <div data-hero-eyebrow style={{ fontSize: 12, letterSpacing: ".38em", textTransform: "uppercase", color: "rgba(180,150,255,.85)", marginBottom: "clamp(10px,2vh,18px)", fontWeight: 600 }}>
@@ -66,21 +66,25 @@ export function CinematicSite({ content }: Props) {
               fontFamily: "var(--font-caveat)",
               fontSize: "clamp(36px,7.2vw,110px)",
               fontWeight: 700,
-              lineHeight: 0.88,
-              color: "#FF2D78",
-              background: "linear-gradient(90deg,#FF2D78,#FF4D2E)",
-              WebkitBackgroundClip: "text",
-              backgroundClip: "text",
-              WebkitTextFillColor: "transparent",
+              lineHeight: 1.08,
               display: "inline-block",
               transform: "rotate(-2.5deg)",
               transformOrigin: "left center",
-              marginBottom: "-0.06em",
+              marginBottom: "0.06em",
               marginLeft: "0.04em",
+              paddingBottom: "0.14em",
+              overflow: "visible",
               willChange: "transform,opacity",
               opacity: 1,
             }}>
-              {hero.titleLines[0]}
+              <span style={{
+                background: "linear-gradient(90deg,#FF2D78,#FF4D2E)",
+                WebkitBackgroundClip: "text",
+                backgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+              }}>
+                {hero.titleLines[0]}
+              </span>
             </div>
 
             {/* "TOON STUDIO" — massive, full-width, bold white */}
@@ -90,9 +94,11 @@ export function CinematicSite({ content }: Props) {
                 fontFamily: "var(--font-bricolage)",
                 fontSize: "clamp(48px,15vw,240px)",
                 fontWeight: 800,
-                lineHeight: 0.86,
+                lineHeight: 0.98,
                 letterSpacing: "-0.03em",
                 color: "#fff",
+                paddingBlock: "0.05em",
+                overflow: "visible",
                 willChange: "transform,opacity",
                 opacity: 1,
                 textTransform: "uppercase",
@@ -177,7 +183,7 @@ export function CinematicSite({ content }: Props) {
       <section id="who-we-are" data-section="who-we-are" style={{ position: "relative", background: "#0B0B0C", padding: "clamp(90px,12vh,170px) clamp(20px,5vw,80px)" }}>
         <div style={{ maxWidth: 1180, margin: "0 auto" }}>
           <div data-reveal style={{ fontSize: 13, letterSpacing: ".3em", textTransform: "uppercase", color: "#2F6BFF", marginBottom: 40, fontWeight: 600 }}>{whoWeAre.label}</div>
-          <h2 style={{ margin: 0, fontFamily: "var(--font-bricolage)", fontWeight: 700, letterSpacing: "-.02em", lineHeight: 1.04, fontSize: "clamp(28px,4.4vw,62px)", maxWidth: "18ch" }}>
+          <h2 data-display-heading style={{ margin: 0, fontFamily: "var(--font-bricolage)", fontWeight: 700, letterSpacing: "-.02em", lineHeight: 1.04, fontSize: "clamp(28px,4.4vw,62px)", maxWidth: "18ch" }}>
             {whoWeAre.headlineParts?.length ? (
               whoWeAre.headlineParts.map((part, i) => (
                 <span key={i} data-center-fade style={{ display: "inline", ...(part.color ? { color: part.color } : {}) }}>{part.text}</span>
@@ -199,7 +205,7 @@ export function CinematicSite({ content }: Props) {
         <div data-strength-grid style={{ maxWidth: 1180, margin: "0 auto", display: "grid", gridTemplateColumns: "minmax(0,0.8fr) minmax(0,1.2fr)", gap: "clamp(40px,6vw,90px)", alignItems: "start" }}>
           <div style={{ position: "sticky", top: 140 }}>
             <div data-reveal style={{ fontSize: 13, letterSpacing: ".3em", textTransform: "uppercase", color: "#FF4D2E", marginBottom: 20, fontWeight: 600 }}>{strength.label}</div>
-            <h2 data-reveal style={{ margin: 0, fontFamily: "var(--font-bricolage)", fontWeight: 800, fontSize: "clamp(40px,6vw,96px)", lineHeight: 0.9, letterSpacing: "-.03em", whiteSpace: "pre-line" }}>{strength.headline.replace(". ", ".\n")}</h2>
+            <h2 data-reveal data-display-heading style={{ margin: 0, fontFamily: "var(--font-bricolage)", fontWeight: 800, fontSize: "clamp(40px,6vw,96px)", lineHeight: 0.98, letterSpacing: "-.03em", whiteSpace: "pre-line" }}>{strength.headline.replace(". ", ".\n")}</h2>
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: "clamp(30px,5vh,56px)", paddingTop: 10 }}>
             {strength.paragraphs.map((p) => (
@@ -215,7 +221,7 @@ export function CinematicSite({ content }: Props) {
       <section id="services" data-section="services" style={{ position: "relative", background: "#F2EEE6", color: "#15130F", padding: "clamp(60px,8vh,110px) clamp(20px,5vw,80px) clamp(90px,12vh,160px)" }}>
         <div style={{ maxWidth: 1180, margin: "0 auto" }}>
           <div data-services-header style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", flexWrap: "wrap", gap: 20, marginBottom: "clamp(40px,6vh,80px)" }}>
-            <h2 data-reveal style={{ margin: 0, fontFamily: "var(--font-bricolage)", fontWeight: 800, fontSize: "clamp(36px,5.2vw,80px)", lineHeight: 0.92, letterSpacing: "-.03em", maxWidth: "14ch" }}>What we<br />do best</h2>
+            <h2 data-reveal data-display-heading style={{ margin: 0, fontFamily: "var(--font-bricolage)", fontWeight: 800, fontSize: "clamp(36px,5.2vw,80px)", lineHeight: 0.98, letterSpacing: "-.03em", maxWidth: "14ch" }}>What we<br />do best</h2>
             <a data-reveal data-section-cta href="#work" style={{ display: "inline-flex", alignItems: "center", gap: 10, fontSize: 14, fontWeight: 600, border: "1px solid rgba(21,19,15,.25)", padding: "14px 24px", borderRadius: 9999 }}>Explore all services <span style={{ color: "#FF4D2E" }}>→</span></a>
           </div>
           <div data-services-stack style={{ position: "relative" }}>
@@ -229,7 +235,7 @@ export function CinematicSite({ content }: Props) {
                       <span data-svc-label style={{ fontSize: 12, letterSpacing: ".2em", textTransform: "uppercase", color: svc.theme === "orange" ? "rgba(21,19,15,.45)" : "rgba(255,255,255,.4)" }}>Service</span>
                     </div>
                     <div>
-                      <h3 data-svc-title style={{ margin: "0 0 18px", fontFamily: "var(--font-bricolage)", fontWeight: 800, fontSize: "clamp(30px,3.6vw,54px)", lineHeight: 0.96, letterSpacing: "-.02em", whiteSpace: "pre-line" }}>{svc.title}</h3>
+                      <h3 data-svc-title data-display-heading style={{ margin: "0 0 18px", fontFamily: "var(--font-bricolage)", fontWeight: 800, fontSize: "clamp(30px,3.6vw,54px)", lineHeight: 1, letterSpacing: "-.02em", whiteSpace: "pre-line" }}>{svc.title}</h3>
                       <p data-svc-desc style={{ margin: 0, fontSize: "clamp(15px,1.4vw,18px)", lineHeight: 1.55, color: theme.sub, maxWidth: "42ch" }}>{svc.description}</p>
                     </div>
                   </div>
@@ -249,7 +255,7 @@ export function CinematicSite({ content }: Props) {
           <div data-hscroll-header style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", padding: "0 clamp(20px,5vw,72px)", marginBottom: 30, flexWrap: "wrap", gap: 16 }}>
             <div>
               <div style={{ fontSize: 13, letterSpacing: ".3em", textTransform: "uppercase", color: "#2F6BFF", marginBottom: 14, fontWeight: 600 }}>Our work</div>
-              <h2 style={{ margin: 0, fontFamily: "var(--font-bricolage)", fontWeight: 800, fontSize: "clamp(30px,4.6vw,70px)", letterSpacing: "-.02em", lineHeight: 0.95 }}>Selected projects</h2>
+              <h2 data-display-heading style={{ margin: 0, fontFamily: "var(--font-bricolage)", fontWeight: 800, fontSize: "clamp(30px,4.6vw,70px)", letterSpacing: "-.02em", lineHeight: 1 }}>Selected projects</h2>
             </div>
             <a href={contact.youtubeUrl} target="_blank" rel="noopener noreferrer" data-section-cta style={{ fontSize: 14, fontWeight: 600, border: "1px solid rgba(255,255,255,.22)", padding: "13px 22px", borderRadius: 9999 }}>See more of our work →</a>
           </div>
@@ -287,7 +293,7 @@ export function CinematicSite({ content }: Props) {
             <div style={{ fontSize: 13, letterSpacing: ".3em", textTransform: "uppercase", color: "#FF4D2E", marginBottom: 28, fontWeight: 600 }}>The dreamers behind Toon Studio</div>
             {founders.map((f, i) => (
               <div key={f.id} data-bio={i + 1} style={{ ...(i > 0 ? { position: "absolute", top: 60, left: 0, right: 0, opacity: 0 } : {}), willChange: "transform,opacity" }}>
-                <h3 style={{ margin: "0 0 18px", fontFamily: "var(--font-bricolage)", fontWeight: 800, fontSize: "clamp(34px,4.4vw,68px)", lineHeight: 0.95, letterSpacing: "-.02em", whiteSpace: "pre-line" }}>{f.name}</h3>
+                <h3 data-display-heading style={{ margin: "0 0 18px", fontFamily: "var(--font-bricolage)", fontWeight: 800, fontSize: "clamp(34px,4.4vw,68px)", lineHeight: 1, letterSpacing: "-.02em", whiteSpace: "pre-line" }}>{f.name}</h3>
                 <p style={{ margin: 0, fontSize: "clamp(15px,1.5vw,19px)", lineHeight: 1.55, color: "rgba(242,238,230,.66)", maxWidth: "46ch" }}>{f.bio}</p>
               </div>
             ))}
@@ -302,7 +308,7 @@ export function CinematicSite({ content }: Props) {
                 <MediaSlot url={f.imageUrl} alt={f.name} placeholder={`${f.name.split(" ")[0]} portrait`} />
               </div>
               <div>
-                <h3 style={{ margin: "0 0 12px", fontFamily: "var(--font-bricolage)", fontWeight: 800, fontSize: "clamp(28px,7vw,40px)", lineHeight: 0.95, letterSpacing: "-.02em", whiteSpace: "pre-line" }}>{f.name}</h3>
+                <h3 data-display-heading style={{ margin: "0 0 12px", fontFamily: "var(--font-bricolage)", fontWeight: 800, fontSize: "clamp(28px,7vw,40px)", lineHeight: 1, letterSpacing: "-.02em", whiteSpace: "pre-line" }}>{f.name}</h3>
                 <p style={{ margin: 0, fontSize: 15, lineHeight: 1.55, color: "rgba(242,238,230,.66)" }}>{f.bio}</p>
               </div>
             </article>
@@ -314,7 +320,7 @@ export function CinematicSite({ content }: Props) {
       <section id="contact" data-section="contact" style={{ position: "relative", background: "#F2EEE6", color: "#15130F", borderRadius: "34px 34px 0 0", marginTop: -34, padding: "clamp(80px,12vh,150px) clamp(20px,5vw,80px) clamp(50px,7vh,90px)" }}>
         <div style={{ maxWidth: 1180, margin: "0 auto" }}>
           <div data-reveal style={{ fontSize: 13, letterSpacing: ".3em", textTransform: "uppercase", color: "#FF4D2E", marginBottom: 24, fontWeight: 600 }}>Get in touch</div>
-          <h2 data-reveal style={{ margin: 0, fontFamily: "var(--font-bricolage)", fontWeight: 800, fontSize: "clamp(40px,8vw,128px)", lineHeight: 0.88, letterSpacing: "-.03em", maxWidth: "14ch" }}>Let&apos;s create something wonderful.</h2>
+          <h2 data-reveal data-display-heading style={{ margin: 0, fontFamily: "var(--font-bricolage)", fontWeight: 800, fontSize: "clamp(40px,8vw,128px)", lineHeight: 0.98, letterSpacing: "-.03em", maxWidth: "14ch" }}>Let&apos;s create something wonderful.</h2>
           <div data-contact-grid style={{ marginTop: "clamp(40px,6vh,72px)", display: "grid", gridTemplateColumns: "repeat(auto-fit,minmax(220px,1fr))", gap: 30 }}>
             <div data-reveal>
               <div style={{ fontSize: 12, letterSpacing: ".2em", textTransform: "uppercase", color: "rgba(21,19,15,.45)", marginBottom: 10 }}>Email</div>

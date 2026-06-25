@@ -24,6 +24,12 @@ function normalizeContent(content: SiteContent): SiteContent {
   return {
     ...content,
     clientLogos: content.clientLogos ?? DEFAULT_CLIENT_LOGOS,
+    featuredPage: content.featuredPage ?? {
+      eyebrow: "Press & media",
+      title: "Featured stories",
+      subtitle: "",
+      pressFeatures: [],
+    },
   };
 }
 

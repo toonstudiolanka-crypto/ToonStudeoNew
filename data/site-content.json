@@ -60,6 +60,30 @@
       "videoUrl": "https://www.youtube.com/watch?v=K-ds6Q9Sfoc"
     }
   ],
+  "featuredPage": {
+    "eyebrow": "Press & media",
+    "title": "Featured stories",
+    "subtitle": "Toon Studio in the news — interviews, features, and industry coverage from Sri Lanka and beyond.",
+    "pressFeatures": [
+      {
+        "id": "press-morning-brunch",
+        "kind": "newspaper",
+        "source": "The Morning Brunch",
+        "title": "Toon Studio on breathing new life into traditional animation",
+        "byline": "By Dimithri Wijesinghe",
+        "imageUrl": "/featured/morning-brunch-newspaper.png"
+      },
+      {
+        "id": "press-daily-mirror",
+        "kind": "article",
+        "source": "Daily Mirror",
+        "title": "Where is the Sri Lankan cartoon and animation industry heading to? - News Features | Daily Mirror",
+        "excerpt": "From Dr. Dolittle to Tintin, ThunderCats to He-Man, and the Ninja Turtles to Scooby-Doo, Sri Lankans of all ages would recall fondly....",
+        "imageUrl": "",
+        "articleUrl": "https://www.dailymirror.lk/news-features/Where-is-the-Sri-Lankan-cartoon-and-animation-industry-heading-to/131-231152"
+      }
+    ]
+  },
   "strength": {
     "label": "Our strength",
     "headline": "Think bold. Think big.",

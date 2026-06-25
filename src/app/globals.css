@@ -225,6 +225,27 @@ button {
   }
 }
 
+/* Display typography — prevent descender clipping from tight line-heights / gradient text */
+[data-hero-title-1],
+[data-hero-title-2],
+[data-display-heading] {
+  overflow: visible;
+  padding-block: 0.06em;
+}
+
+[data-hero-title-1] {
+  line-height: 1.08 !important;
+  padding-bottom: 0.14em;
+}
+
+[data-hero-title-2] {
+  line-height: 0.98 !important;
+}
+
+[data-display-heading] {
+  line-height: 1 !important;
+}
+
 /* ── Hero mobile ── */
 @media (max-width: 880px) {
   [data-scene="hero"] {
@@ -540,6 +561,11 @@ button {
     gap: 36px !important;
   }
 
+  [data-featured-grid] {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+
   [data-contact-form] {
     padding: 24px 18px !important;
   }
@@ -609,8 +635,12 @@ button {
     letter-spacing: 0.1em !important;
   }
 
-  [data-hero-w] {
-    font-size: clamp(36px, 11vw, 52px) !important;
+  [data-hero-title-1] {
+    font-size: clamp(32px, 9vw, 56px) !important;
+  }
+
+  [data-hero-title-2] {
+    font-size: clamp(40px, 14vw, 72px) !important;
   }
 
   [data-hscroll-header] h2 {

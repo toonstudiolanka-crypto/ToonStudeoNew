@@ -75,12 +75,13 @@ export function ContactPage({ content }: Props) {
             </div>
             <h1
               data-reveal
+              data-display-heading
               style={{
                 margin: 0,
                 fontFamily: "var(--font-bricolage)",
                 fontWeight: 800,
                 fontSize: "clamp(44px,9vw,120px)",
-                lineHeight: 0.9,
+                lineHeight: 0.98,
                 letterSpacing: "-.03em",
                 maxWidth: "12ch",
               }}

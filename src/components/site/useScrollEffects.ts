@@ -153,7 +153,9 @@ export function useScrollEffects(rootRef: React.RefObject<HTMLElement | null>) {
             const el = w as HTMLElement;
             el.style.opacity = String(1 - out);
             const drift = (i - 1) * out * (isMobile ? 36 : 60);
-            el.style.transform = `translate(${drift}px, ${-out * (isMobile ? 72 : 110)}px)`;
+            const yOff = -out * (isMobile ? 72 : 110);
+            const tilt = el.hasAttribute("data-hero-title-1") ? "rotate(-2.5deg) " : "";
+            el.style.transform = `${tilt}translate(${drift}px, ${yOff}px)`;
           });
           heroFade.forEach((el) => {
             const e = el as HTMLElement;
