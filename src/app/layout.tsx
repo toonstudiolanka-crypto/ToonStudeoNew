@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Bricolage_Grotesque, Space_Grotesk, Caveat } from "next/font/google";
+import { ChunkLoadRecovery } from "@/components/site/ChunkLoadRecovery";
 import "./globals.css";
 
 const bricolage = Bricolage_Grotesque({
@@ -47,7 +48,10 @@ export default function RootLayout({
         <link rel="preconnect" href="https://www.youtube.com" />
         <link rel="preconnect" href="https://i.ytimg.com" />
       </head>
-      <body className="min-h-full antialiased" suppressHydrationWarning>{children}</body>
+      <body className="min-h-full antialiased" suppressHydrationWarning>
+        <ChunkLoadRecovery />
+        {children}
+      </body>
     </html>
   );
 }

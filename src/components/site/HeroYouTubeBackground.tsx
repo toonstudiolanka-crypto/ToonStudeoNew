@@ -16,7 +16,7 @@ export function HeroYouTubeBackground({ url }: Props) {
 
   const [playing, setPlaying] = useState(false);
   const [buffering, setBuffering] = useState(true);
-  const [posterSrc, setPosterSrc] = useState(() => getYouTubeThumbnail(url, "max") || getYouTubeThumbnail(url, "hq") || "");
+  const [posterSrc, setPosterSrc] = useState(() => getYouTubeThumbnail(url) || "");
 
   const videoId = getYouTubeId(url);
   const showPoster = !playing || buffering;
@@ -143,7 +143,7 @@ export function HeroYouTubeBackground({ url }: Props) {
           alt=""
           aria-hidden
           onError={() => {
-            const fallback = getYouTubeThumbnail(url, "hq");
+            const fallback = getYouTubeThumbnail(url, "max");
             if (fallback && fallback !== posterSrc) setPosterSrc(fallback);
           }}
           style={{

@@ -97,8 +97,10 @@ export function FeaturedVideosSection({ videos }: Props) {
             }}
           >
             {videos.map((v, i) => {
-              const thumbnail = v.thumbnailUrl || getYouTubeThumbnail(v.videoUrl, "max") || "";
-              const fallbackThumbnail = v.thumbnailUrl ? undefined : (getYouTubeThumbnail(v.videoUrl, "hq") || undefined);
+              const thumbnail = v.thumbnailUrl || getYouTubeThumbnail(v.videoUrl) || "";
+              const fallbackThumbnail = v.thumbnailUrl
+                ? undefined
+                : getYouTubeThumbnail(v.videoUrl, "max") || undefined;
               const canPlay = Boolean(v.videoUrl && (isYouTubeUrl(v.videoUrl) || v.videoUrl));
 
               return (

@@ -26,12 +26,12 @@ export function inferMediaTypeFromUrl(url: string): "image" | "video" {
 export const YOUTUBE_URL_HINT =
   "Paste a YouTube link (watch, youtu.be, shorts, or embed). Thumbnails auto-fill when empty.";
 
-export function getYouTubeThumbnail(url: string, quality: "hq" | "max" = "max"): string | null {
+export function getYouTubeThumbnail(url: string, quality: "hq" | "max" = "hq"): string | null {
   const id = getYouTubeId(url);
   if (!id) return null;
   return quality === "max"
-    ? `https://img.youtube.com/vi/${id}/maxresdefault.jpg`
-    : `https://img.youtube.com/vi/${id}/hqdefault.jpg`;
+    ? `https://i.ytimg.com/vi/${id}/maxresdefault.jpg`
+    : `https://i.ytimg.com/vi/${id}/hqdefault.jpg`;
 }
 
 export function getYouTubeEmbedUrl(url: string): string | null {

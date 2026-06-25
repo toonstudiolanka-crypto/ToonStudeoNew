@@ -301,13 +301,13 @@ export function AdminPanel() {
                     onChange={(val) => {
                       const featuredVideos = content.featuredVideos.map((x) => {
                         if (x.id !== v.id) return x;
-                        const autoThumb = !x.thumbnailUrl ? getYouTubeThumbnail(val, "max") || "" : x.thumbnailUrl;
+                        const autoThumb = !x.thumbnailUrl ? getYouTubeThumbnail(val) || "" : x.thumbnailUrl;
                         return { ...x, videoUrl: val, thumbnailUrl: autoThumb };
                       });
                       update({ featuredVideos });
                     }}
                     onUseThumbnail={() => {
-                      const thumb = getYouTubeThumbnail(v.videoUrl, "max") || getYouTubeThumbnail(v.videoUrl, "hq") || "";
+                      const thumb = getYouTubeThumbnail(v.videoUrl) || getYouTubeThumbnail(v.videoUrl, "max") || "";
                       if (!thumb) return;
                       const featuredVideos = content.featuredVideos.map((x) =>
                         x.id === v.id ? { ...x, thumbnailUrl: thumb } : x,
