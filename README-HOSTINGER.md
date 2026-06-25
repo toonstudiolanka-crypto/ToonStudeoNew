@@ -79,3 +79,30 @@ Paste the last 30 lines here so the exact crash reason can be diagnosed.
 - `data/site-content.json` — all site content
 - `data/contact-submissions.json` — contact form submissions
 - `public/uploads/` — uploaded images and videos
+
+---
+
+## Fix ChunkLoadError / MIME type errors after deploy
+
+If the browser console shows errors like:
+
+- `Failed to load chunk /_next/static/chunks/....js`
+- `MIME type ('text/plain') is not executable`
+- `ChunkLoadError`
+
+the HTML page is pointing at JavaScript files from an **older build** that no longer exist on the server.
+
+### What to do
+
+1. In hPanel click **Redeploy** (not only Restart) and wait until the build finishes.
+2. Hard refresh the site: `Ctrl+Shift+R` (Windows) or `Cmd+Shift+R` (Mac).
+3. Confirm `https://your-domain.com/api/health` returns `{"ok":true,...}`.
+4. If the error persists, open the failing chunk URL directly in the browser. A working deploy returns JavaScript; a broken deploy returns plain text or 404/500.
+
+### Prevent it
+
+- Always redeploy after pushing code changes.
+- Do not manually delete files inside `.next/` on the server between restarts.
+- Keep **Node.js 20.x** and the build/start commands from the table above.
+
+The app now auto-reloads once when a stale chunk is detected, but a full redeploy is still required if the build on the server is incomplete.
