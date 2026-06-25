@@ -9,7 +9,7 @@
     "prebuild": "node scripts/check-node.mjs",
     "dev": "next dev",
     "build": "next build",
-    "start": "next start -H 0.0.0.0 -p ${PORT:-3000}",
+    "start": "node server.js",
     "lint": "eslint"
   },
   "dependencies": {
