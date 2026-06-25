@@ -18,6 +18,7 @@ export function getYouTubeWatchUrl(url: string): string | null {
 export function inferMediaTypeFromUrl(url: string): "image" | "video" {
   if (!url) return "video";
   if (isYouTubeUrl(url)) return "video";
+  if (/vimeo\.com|player\.vimeo\.com/.test(url)) return "video";
   if (/\.(mp4|webm|mov)(\?|$)/i.test(url)) return "video";
   if (/\.(jpe?g|png|webp|gif|svg)(\?|$)/i.test(url) || url.startsWith("/uploads/")) return "image";
   return "video";

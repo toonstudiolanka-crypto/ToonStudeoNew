@@ -1,8 +1,10 @@
 "use client";
 
 import { useState } from "react";
+import { getVimeoId } from "@/lib/vimeo";
 import { getYouTubeId } from "@/lib/youtube";
 import { dispatchHeroVideoReady } from "@/lib/youtube-player";
+import { HeroVimeoBackground } from "./HeroVimeoBackground";
 import { HeroYouTubeBackground } from "./HeroYouTubeBackground";
 
 const coverStyle: React.CSSProperties = {
@@ -41,6 +43,10 @@ export function HeroMedia({ url, type = "video", placeholder }: Props) {
         {placeholder || "Add hero media"}
       </div>
     );
+  }
+
+  if (type === "video" && getVimeoId(url)) {
+    return <HeroVimeoBackground url={url} />;
   }
 
   if (type === "video" && getYouTubeId(url)) {

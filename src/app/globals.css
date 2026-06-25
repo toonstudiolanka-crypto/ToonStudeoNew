@@ -139,6 +139,10 @@ button {
   will-change: transform;
 }
 
+[data-client-logo] {
+  filter: brightness(0) invert(1);
+}
+
 [data-client-marquee]:hover [data-client-track] {
   animation-play-state: paused;
 }
