@@ -303,7 +303,7 @@ button {
   }
 
   #work[data-hscroll] {
-    height: 320vh !important;
+    height: 420vh !important;
   }
 
   [data-hscroll-sticky] {

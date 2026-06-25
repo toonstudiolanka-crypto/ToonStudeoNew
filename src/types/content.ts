@@ -29,6 +29,7 @@ export type WorkItem = {
   category: string;
   year: string;
   imageUrl: string;
+  videoUrl?: string;
   aspect: "4/5" | "1/1" | "16/10" | "3/4" | "5/4";
 };
 

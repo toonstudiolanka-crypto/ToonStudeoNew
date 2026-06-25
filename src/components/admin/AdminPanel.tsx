@@ -348,10 +348,11 @@ export function AdminPanel() {
                   <TextField label="Title" value={w.title} onChange={(val) => { const work = content.work.map((x) => x.id === w.id ? { ...x, title: val } : x); update({ work }); }} />
                   <TextField label="Category" value={w.category} onChange={(val) => { const work = content.work.map((x) => x.id === w.id ? { ...x, category: val } : x); update({ work }); }} />
                   <TextField label="Year" value={w.year} onChange={(val) => { const work = content.work.map((x) => x.id === w.id ? { ...x, year: val } : x); update({ work }); }} />
-                  <MediaField label="Project image" url={w.imageUrl} onUpload={(url) => { const work = content.work.map((x) => x.id === w.id ? { ...x, imageUrl: url } : x); update({ work }); }} onRemove={() => { const work = content.work.map((x) => x.id === w.id ? { ...x, imageUrl: "" } : x); update({ work }); }} />
+                  <TextField label="YouTube / video URL" value={w.videoUrl || ""} hint={YOUTUBE_URL_HINT} onChange={(val) => { const work = content.work.map((x) => x.id === w.id ? { ...x, videoUrl: val } : x); update({ work }); }} />
+                  <MediaField label="Project image (optional — YouTube thumbnail auto-fills)" url={w.imageUrl} onUpload={(url) => { const work = content.work.map((x) => x.id === w.id ? { ...x, imageUrl: url } : x); update({ work }); }} onRemove={() => { const work = content.work.map((x) => x.id === w.id ? { ...x, imageUrl: "" } : x); update({ work }); }} />
                 </div>
               ))}
-              <button type="button" onClick={() => update({ work: [...content.work, { id: uuidv4(), title: "New project", category: "Category", year: "2024", imageUrl: "", aspect: "4/5" as WorkItem["aspect"] }] })} style={{ marginTop: 16, padding: "12px 20px", borderRadius: 9999, border: "1px dashed rgba(255,255,255,.25)", background: "transparent", color: "#F2EEE6", cursor: "pointer", width: "100%" }}>
+              <button type="button" onClick={() => update({ work: [...content.work, { id: uuidv4(), title: "New project", category: "Category", year: "2024", imageUrl: "", videoUrl: "", aspect: "4/5" as WorkItem["aspect"] }] })} style={{ marginTop: 16, padding: "12px 20px", borderRadius: 9999, border: "1px dashed rgba(255,255,255,.25)", background: "transparent", color: "#F2EEE6", cursor: "pointer", width: "100%" }}>
                 + Add project
               </button>
             </SectionCard>

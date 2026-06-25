@@ -154,43 +154,84 @@
   "work": [
     {
       "id": "work-1",
-      "title": "Daily Deals — Black Friday",
-      "category": "Social Campaign",
-      "year": "2023",
-      "imageUrl": "",
-      "aspect": "4/5"
-    },
-    {
-      "id": "work-2",
-      "title": "Youth Voice Campaign",
-      "category": "Illustration",
-      "year": "2022",
-      "imageUrl": "",
-      "aspect": "1/1"
-    },
-    {
-      "id": "work-3",
-      "title": "Money Quest — Game Artwork",
+      "title": "Equite | Animated Short",
       "category": "Animation",
-      "year": "2021",
+      "year": "2024",
       "imageUrl": "",
+      "videoUrl": "https://youtu.be/WuOowd7EcZE",
       "aspect": "16/10"
     },
     {
-      "id": "work-4",
-      "title": "Hassle-Free — Valentine's",
-      "category": "Creative Design",
-      "year": "2023",
+      "id": "work-2",
+      "title": "One Sri Lanka Dialogue",
+      "category": "Animation",
+      "year": "2024",
       "imageUrl": "",
+      "videoUrl": "https://youtu.be/K-ds6Q9Sfoc",
+      "aspect": "4/5"
+    },
+    {
+      "id": "work-3",
+      "title": "The Untold Story of Tamil Estate Workers",
+      "category": "Documentary",
+      "year": "2024",
+      "imageUrl": "",
+      "videoUrl": "https://youtu.be/Efcmkvk7fHE",
+      "aspect": "1/1"
+    },
+    {
+      "id": "work-4",
+      "title": "Elephants in Sri Lanka",
+      "category": "Documentary",
+      "year": "2024",
+      "imageUrl": "",
+      "videoUrl": "https://youtu.be/XNHRon4Y6G0",
       "aspect": "3/4"
     },
     {
       "id": "work-5",
-      "title": "AnimEd — Educational Artwork",
-      "category": "Comics",
-      "year": "2022",
+      "title": "FoundHer | Lead with Grace",
+      "category": "Social Campaign",
+      "year": "2024",
       "imageUrl": "",
+      "videoUrl": "https://youtu.be/rNPaik4w8pQ",
       "aspect": "5/4"
+    },
+    {
+      "id": "work-6",
+      "title": "Needs & Wants | HSBC",
+      "category": "Animation",
+      "year": "2024",
+      "imageUrl": "",
+      "videoUrl": "https://youtu.be/DW6GsUf8NNQ",
+      "aspect": "16/10"
+    },
+    {
+      "id": "work-7",
+      "title": "Antibiotic Awareness Animation",
+      "category": "Animation",
+      "year": "2024",
+      "imageUrl": "",
+      "videoUrl": "https://youtu.be/wVelcvieBwI",
+      "aspect": "4/5"
+    },
+    {
+      "id": "work-8",
+      "title": "AHA — Awareness on Human Actions",
+      "category": "European Union",
+      "year": "2024",
+      "imageUrl": "",
+      "videoUrl": "https://youtu.be/nNrDpOhlMoQ",
+      "aspect": "1/1"
+    },
+    {
+      "id": "work-9",
+      "title": "Hashtag Generation",
+      "category": "Animation",
+      "year": "2024",
+      "imageUrl": "",
+      "videoUrl": "https://www.youtube.com/watch?v=-81c51_Hjk0",
+      "aspect": "3/4"
     }
   ],
   "founders": [

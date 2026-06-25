@@ -4,6 +4,7 @@ import { useRef } from "react";
 import type { SiteContent } from "@/types/content";
 import { ClientLogosSection } from "./ClientLogosSection";
 import { FeaturedVideosSection } from "./FeaturedVideosSection";
+import { WorkSection } from "./WorkSection";
 import { HeroMedia } from "./HeroMedia";
 import { MediaSlot } from "@/components/ui/MediaSlot";
 import { SERVICE_THEMES } from "@/lib/theme";
@@ -249,35 +250,7 @@ export function CinematicSite({ content }: Props) {
         </div>
       </section>
 
-      {/* WORK */}
-      <section id="work" data-hscroll style={{ position: "relative", height: "340vh", background: "#0B0B0C", borderRadius: "34px 34px 0 0", marginTop: -34 }}>
-        <div data-hscroll-sticky style={{ position: "sticky", top: 0, height: "100vh", overflow: "hidden", display: "flex", flexDirection: "column", justifyContent: "center" }}>
-          <div data-hscroll-header style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", padding: "0 clamp(20px,5vw,72px)", marginBottom: 30, flexWrap: "wrap", gap: 16 }}>
-            <div>
-              <div style={{ fontSize: 13, letterSpacing: ".3em", textTransform: "uppercase", color: "#2F6BFF", marginBottom: 14, fontWeight: 600 }}>Our work</div>
-              <h2 data-display-heading style={{ margin: 0, fontFamily: "var(--font-bricolage)", fontWeight: 800, fontSize: "clamp(30px,4.6vw,70px)", letterSpacing: "-.02em", lineHeight: 1 }}>Selected projects</h2>
-            </div>
-            <a href={contact.youtubeUrl} target="_blank" rel="noopener noreferrer" data-section-cta style={{ fontSize: 14, fontWeight: 600, border: "1px solid rgba(255,255,255,.22)", padding: "13px 22px", borderRadius: 9999 }}>See more of our work →</a>
-          </div>
-          <div data-htrack style={{ display: "flex", gap: 24, padding: "0 clamp(20px,5vw,72px)", alignItems: "center", width: "max-content", willChange: "transform" }}>
-            {work.map((item, i) => (
-              <article key={item.id} style={{ flex: "none", width: "min(80vw,560px)", alignSelf: i % 2 ? "flex-end" : "flex-start" }}>
-                <div style={{ position: "relative", borderRadius: 16, overflow: "hidden", aspectRatio: item.aspect, background: "#141416" }}>
-                  <MediaSlot url={item.imageUrl} placeholder="Project image" />
-                </div>
-                <div style={{ marginTop: 14 }}>
-                  <div style={{ fontSize: 11, letterSpacing: ".2em", textTransform: "uppercase", color: i % 2 ? "#2F6BFF" : "#FF4D2E" }}>{item.category} · {item.year}</div>
-                  <h3 style={{ margin: "6px 0 0", fontFamily: "var(--font-bricolage)", fontWeight: 700, fontSize: 22 }}>{item.title}</h3>
-                </div>
-              </article>
-            ))}
-            <article style={{ flex: "none", width: "min(80vw,420px)", alignSelf: "center", display: "flex", flexDirection: "column", justifyContent: "center", paddingLeft: 10 }}>
-              <h3 style={{ margin: 0, fontFamily: "var(--font-bricolage)", fontWeight: 800, fontSize: "clamp(28px,3vw,44px)", lineHeight: 1, letterSpacing: "-.02em" }}>Let&apos;s make<br />yours next.</h3>
-              <a href="/contact" style={{ marginTop: 22, display: "inline-flex", alignItems: "center", gap: 10, fontSize: 14, fontWeight: 600, border: "1px solid rgba(255,255,255,.25)", padding: "14px 24px", borderRadius: 9999, width: "max-content" }}>Start a project <span style={{ color: "#FF4D2E" }}>→</span></a>
-            </article>
-          </div>
-        </div>
-      </section>
+      <WorkSection work={work} youtubeUrl={contact.youtubeUrl} />
 
       {/* FOUNDERS */}
       <section data-scene="founders" id="about" style={{ position: "relative", height: "280vh", background: "#0B0B0C" }}>
