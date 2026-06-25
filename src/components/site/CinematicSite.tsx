@@ -287,7 +287,7 @@ export function CinematicSite({ content }: Props) {
             <div style={{ fontSize: 13, letterSpacing: ".3em", textTransform: "uppercase", color: "#FF4D2E", marginBottom: 28, fontWeight: 600 }}>The dreamers behind Toon Studio</div>
             {founders.map((f, i) => (
               <div key={f.id} data-bio={i + 1} style={{ ...(i > 0 ? { position: "absolute", top: 60, left: 0, right: 0, opacity: 0 } : {}), willChange: "transform,opacity" }}>
-                <h3 style={{ margin: "0 0 18px", fontFamily: "var(--font-bricolage)", fontWeight: 800, fontSize: "clamp(34px,4.4vw,68px)", lineHeight: 0.95, letterSpacing: "-.02em", whiteSpace: "pre-line" }}>{f.name.replace(" ", "\n")}</h3>
+                <h3 style={{ margin: "0 0 18px", fontFamily: "var(--font-bricolage)", fontWeight: 800, fontSize: "clamp(34px,4.4vw,68px)", lineHeight: 0.95, letterSpacing: "-.02em", whiteSpace: "pre-line" }}>{f.name}</h3>
                 <p style={{ margin: 0, fontSize: "clamp(15px,1.5vw,19px)", lineHeight: 1.55, color: "rgba(242,238,230,.66)", maxWidth: "46ch" }}>{f.bio}</p>
               </div>
             ))}
@@ -302,7 +302,7 @@ export function CinematicSite({ content }: Props) {
                 <MediaSlot url={f.imageUrl} alt={f.name} placeholder={`${f.name.split(" ")[0]} portrait`} />
               </div>
               <div>
-                <h3 style={{ margin: "0 0 12px", fontFamily: "var(--font-bricolage)", fontWeight: 800, fontSize: "clamp(28px,7vw,40px)", lineHeight: 0.95, letterSpacing: "-.02em" }}>{f.name}</h3>
+                <h3 style={{ margin: "0 0 12px", fontFamily: "var(--font-bricolage)", fontWeight: 800, fontSize: "clamp(28px,7vw,40px)", lineHeight: 0.95, letterSpacing: "-.02em", whiteSpace: "pre-line" }}>{f.name}</h3>
                 <p style={{ margin: 0, fontSize: 15, lineHeight: 1.55, color: "rgba(242,238,230,.66)" }}>{f.bio}</p>
               </div>
             </article>

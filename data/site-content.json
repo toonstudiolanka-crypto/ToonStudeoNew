@@ -172,15 +172,15 @@
   "founders": [
     {
       "id": "found-1",
-      "name": "Harith Kumarasinghe",
-      "bio": "A multi-talented entrepreneur, filmmaker, animator, comic artist, writer and creative director with 10+ years in the creative industry. In 2018 he founded Toon Studio with his brother — a dreamer of a better world.",
-      "imageUrl": ""
+      "name": "Harith Kumarasinghe\n- Founder",
+      "bio": "With over a decade of experience in the creative industry, Harith is a multi-talented entrepreneur, filmmaker, and visionary. As an accomplished animator, comic artist, and author, his diverse skill set shapes the core artistic direction of the agency. In 2018, Harith co-founded Toon Studio, establishing a dynamic hub for innovative storytelling and visual arts.",
+      "imageUrl": "/profile/Harith%20Madhawa.webp"
     },
     {
       "id": "found-2",
-      "name": "Chamith Kumarasinghe",
-      "bio": "A well-experienced producer, cinematographer, marketing strategist and creative director with 10+ years in the industry. His expertise in cinematography is showcased throughout Toon Studio's video production unit.",
-      "imageUrl": ""
+      "name": "Chamith Kumarasinghe\n- Founder",
+      "bio": "Bringing over ten years of multidisciplinary expertise to the industry, Chamith is a seasoned producer, marketing strategist, and creative director. His exceptional eye for cinematography serves as the visual cornerstone of Toon Studio's video production unit. Driving the agency's operations forward as business manager, Chamith also leverages a comprehensive background as a senior full-stack developer, UI/UX designer, and professional content writer to ensure every campaign and digital platform is executed with both technical precision and compelling narrative depth.",
+      "imageUrl": "/profile/Chamith%20Pubuditha.webp"
     }
   ],
   "contact": {
