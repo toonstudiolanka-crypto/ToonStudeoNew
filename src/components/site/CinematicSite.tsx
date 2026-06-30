@@ -43,7 +43,7 @@ export function CinematicSite({ content }: Props) {
 
       {/* HERO */}
       <section data-scene="hero" style={{ position: "relative", height: "210vh", background: "#0B0B0C" }}>
-        <div style={{ position: "sticky", top: 0, height: "100vh", overflow: "hidden", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+        <div data-hero-sticky style={{ position: "sticky", top: 0, height: "100vh", minHeight: "100svh", display: "flex", flexDirection: "column", justifyContent: "flex-end" }}>
 
           {/* Background video */}
           <div data-hero-stage style={{ position: "absolute", inset: 0, overflow: "hidden", transformOrigin: "center center", willChange: "transform,border-radius" }}>
@@ -55,75 +55,38 @@ export function CinematicSite({ content }: Props) {
             <div data-hero-dark style={{ position: "absolute", inset: 0, background: "#0B0B0C", opacity: 0 }} />
           </div>
 
-          {/* Main content */}
-          <div data-hero-content style={{ position: "relative", zIndex: 3, padding: "0 clamp(20px,5vw,72px)", paddingBottom: "clamp(20px,4vh,48px)", width: "100%", maxWidth: 1400, overflow: "visible" }}>
+          <div data-hero-inner>
+            {/* Main content */}
+            <div data-hero-content>
+              <div data-hero-eyebrow>
+                {hero.eyebrow}
+              </div>
 
-            {/* Eyebrow */}
-            <div data-hero-eyebrow style={{ fontSize: 12, letterSpacing: ".38em", textTransform: "uppercase", color: "rgba(180,150,255,.85)", marginBottom: "clamp(10px,2vh,18px)", fontWeight: 600 }}>
-              {hero.eyebrow}
+              <div data-hero-titles>
+                <div data-hero-w data-hero-title-1>
+                  <span className="hero-title-gradient">{hero.titleLines[0]}</span>
+                </div>
+
+                <div data-hero-title-2-wrap>
+                  <span data-hero-w data-hero-title-2>
+                    {hero.titleLines[1] ?? ""}
+                  </span>
+                </div>
+              </div>
+
+              <div data-hero-fade data-hero-subtitle>
+                <p>{hero.subtitle}</p>
+              </div>
             </div>
 
-            {/* "The Creative Awakening" — Caveat cursive, tilted, pink-red */}
-            <div data-hero-w data-hero-title-1 style={{
-              fontFamily: "var(--font-caveat)",
-              fontSize: "clamp(40px,7.2vw,110px)",
-              fontWeight: 700,
-              lineHeight: 1.08,
-              display: "inline-block",
-              transform: "rotate(-2.5deg)",
-              transformOrigin: "left center",
-              marginBottom: "0.08em",
-              marginLeft: "0.04em",
-              paddingBottom: "0.14em",
-              overflow: "visible",
-              willChange: "transform,opacity",
-              opacity: 1,
-            }}>
-              <span className="hero-title-gradient" style={{
-                background: "linear-gradient(90deg,#FF2D78,#FF4D2E)",
-                WebkitBackgroundClip: "text",
-                backgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-              }}>
-                {hero.titleLines[0]}
-              </span>
-            </div>
-
-            {/* "TOON STUDIO" — massive, full-width, bold white */}
-            <div>
-              <span data-hero-w data-hero-title-2 style={{
-                display: "block",
-                fontFamily: "var(--font-bricolage)",
-                fontSize: "clamp(52px,15vw,240px)",
-                fontWeight: 800,
-                lineHeight: 0.98,
-                letterSpacing: "-0.025em",
-                color: "#fff",
-                paddingBlock: "0.05em",
-                overflow: "visible",
-                willChange: "transform,opacity",
-                opacity: 1,
-                textTransform: "uppercase",
-              }}>
-                {hero.titleLines[1] ?? ""}
-              </span>
-            </div>
-
-            {/* Subtitle */}
-            <div data-hero-fade data-hero-subtitle style={{
-              marginTop: "clamp(24px,4vh,48px)",
-              willChange: "transform,opacity",
-            }}>
-              <p style={{
-                margin: 0,
-                maxWidth: "46ch",
-                fontSize: "clamp(16px,1.45vw,20px)",
-                lineHeight: 1.6,
-                fontWeight: 500,
-                color: "rgba(220,210,240,.85)",
-              }}>
-                {hero.subtitle}
-              </p>
+            {/* Tags row */}
+            <div data-hero-fade data-hero-tags>
+              {hero.tags.map((tag, i) => (
+                <span key={tag} style={{ display: "contents" }}>
+                  {i > 0 && <span data-hero-tag-dot style={{ background: DOT_COLORS[(i - 1) % DOT_COLORS.length] }} />}
+                  <span data-hero-tag>{tag}</span>
+                </span>
+              ))}
             </div>
           </div>
 
@@ -133,50 +96,22 @@ export function CinematicSite({ content }: Props) {
             data-hero-scroll-hint
             data-hero-fade
             aria-label="Scroll down"
-            style={{
-              position: "absolute",
-              left: "50%",
-              bottom: "clamp(52px,8vh,72px)",
-              zIndex: 5,
-              transform: "translateX(-50%)",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              gap: 8,
-              color: "rgba(255,255,255,.55)",
-              textDecoration: "none",
-            }}
           >
-            <span style={{ fontSize: 10, letterSpacing: ".28em", textTransform: "uppercase" }}>Scroll</span>
-            <span data-hero-scroll-icon style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 4 }}>
+            <span>Scroll</span>
+            <span data-hero-scroll-icon>
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden>
                 <path d="M12 5v14M5 12l7 7 7-7" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </span>
           </a>
 
-          {/* Tags row */}
-          <div data-hero-fade data-hero-tags style={{
-            position: "relative", zIndex: 3,
-            padding: "clamp(18px,3vh,28px) clamp(20px,5vw,72px) 0",
-            display: "flex", gap: "8px 0", flexWrap: "wrap", alignItems: "center",
-            willChange: "transform,opacity",
-          }}>
-            {hero.tags.map((tag, i) => (
-              <span key={tag} style={{ display: "contents" }}>
-                {i > 0 && <span style={{ width: 3, height: 3, borderRadius: "50%", background: DOT_COLORS[(i - 1) % DOT_COLORS.length], margin: "0 14px" }} />}
-                <span style={{ fontSize: 11, letterSpacing: ".2em", textTransform: "uppercase", color: "rgba(255,255,255,.45)", fontWeight: 500 }}>{tag}</span>
-              </span>
-            ))}
-          </div>
-
           {/* Bottom progress bar */}
-          <div data-hero-ui style={{ position: "absolute", left: 0, right: 0, bottom: 0, zIndex: 4, padding: "0 clamp(20px,5vw,72px) clamp(18px,3vh,26px)", display: "flex", alignItems: "center", gap: 16 }}>
-            <span data-hero-frame style={{ fontSize: 11, letterSpacing: ".22em", color: "rgba(255,255,255,.4)", fontVariantNumeric: "tabular-nums", minWidth: 36 }}>0001</span>
-            <div style={{ flex: 1, height: 1, background: "rgba(255,255,255,.1)", borderRadius: 2, overflow: "hidden" }}>
-              <div data-hero-bar style={{ height: "100%", width: "0%", background: "linear-gradient(90deg,#FF2D78,#7C4DFF)" }} />
+          <div data-hero-ui>
+            <span data-hero-frame>0001</span>
+            <div data-hero-bar-track>
+              <div data-hero-bar />
             </div>
-            <span style={{ fontSize: 10, letterSpacing: ".28em", textTransform: "uppercase", color: "rgba(255,255,255,.32)" }}>Showreel</span>
+            <span data-hero-ui-label>Showreel</span>
           </div>
 
         </div>
@@ -206,7 +141,7 @@ export function CinematicSite({ content }: Props) {
       {/* STRENGTH */}
       <section data-section="strength" style={{ position: "relative", background: "#F2EEE6", color: "#15130F", borderRadius: "34px 34px 0 0", padding: "clamp(90px,12vh,160px) clamp(20px,5vw,80px)", marginTop: -34 }}>
         <div data-strength-grid style={{ maxWidth: 1180, margin: "0 auto", display: "grid", gridTemplateColumns: "minmax(0,0.8fr) minmax(0,1.2fr)", gap: "clamp(40px,6vw,90px)", alignItems: "start" }}>
-          <div style={{ position: "sticky", top: 140 }}>
+          <div data-strength-sticky>
             <div data-reveal style={{ fontSize: 13, letterSpacing: ".3em", textTransform: "uppercase", color: "#FF4D2E", marginBottom: 20, fontWeight: 600 }}>{strength.label}</div>
             <h2 data-reveal data-display-heading style={{ margin: 0, fontFamily: "var(--font-bricolage)", fontWeight: 800, fontSize: "clamp(40px,6vw,96px)", lineHeight: 0.98, letterSpacing: "-.03em", whiteSpace: "pre-line" }}>{strength.headline.replace(". ", ".\n")}</h2>
           </div>

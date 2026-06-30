@@ -35,17 +35,27 @@ function PressFeatureCard({ item }: { item: PressFeature }) {
         }}
       >
         {item.imageUrl ? (
-          <div style={{ aspectRatio: "16/10", overflow: "hidden", background: "#f5f3ef" }}>
+          <div
+            data-press-card-media
+            style={{
+              aspectRatio: "16/10",
+              overflow: "hidden",
+              background: "#f5f3ef",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              padding: "clamp(20px,4vw,32px)",
+            }}
+          >
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={item.imageUrl}
-              alt={`${item.source}: ${item.title}`}
+              alt={`${item.source} logo`}
               style={{
-                width: item.imagePosition?.includes("left") || item.imagePosition?.includes("right") ? "200%" : "100%",
+                width: "100%",
                 height: "100%",
-                maxWidth: "none",
-                objectFit: "cover",
-                objectPosition: item.imagePosition || "center",
+                objectFit: "contain",
+                objectPosition: "center",
                 display: "block",
               }}
             />

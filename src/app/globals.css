@@ -262,10 +262,246 @@ button {
   line-height: 1 !important;
 }
 
+/* ── Hero layout & typography ── */
+[data-hero-sticky] {
+  position: sticky;
+  overflow: clip;
+}
+
+[data-hero-inner] {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  padding: clamp(88px, 14vh, 132px) clamp(20px, 5vw, 80px) clamp(88px, 11vh, 120px);
+  box-sizing: border-box;
+}
+
+[data-hero-content] {
+  position: relative;
+  width: 100%;
+  max-width: none;
+  overflow: visible;
+}
+
+[data-hero-eyebrow] {
+  font-size: 12px;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+  color: rgba(180, 150, 255, 0.85);
+  margin-bottom: clamp(12px, 2vh, 22px);
+  font-weight: 600;
+}
+
+[data-hero-titles] {
+  overflow: visible;
+  padding-block: 0.12em 0.2em;
+}
+
+[data-hero-title-1] {
+  font-family: var(--font-caveat);
+  font-weight: 700;
+  line-height: 1.1 !important;
+  display: inline-block;
+  transform: rotate(-2.5deg);
+  transform-origin: left bottom;
+  margin: 0 0 0.02em 0.06em;
+  padding: 0 0 0.22em;
+  overflow: visible;
+  will-change: transform, opacity;
+}
+
+[data-hero-title-1] .hero-title-gradient {
+  background: linear-gradient(90deg, #ff2d78, #ff4d2e);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding: 0 0.04em 0.1em;
+  -webkit-font-smoothing: antialiased;
+}
+
+[data-hero-title-2-wrap] {
+  width: 100%;
+  overflow: visible;
+  margin-top: -0.04em;
+}
+
+[data-hero-title-2] {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  font-family: var(--font-bricolage);
+  font-weight: 800;
+  line-height: 0.94 !important;
+  letter-spacing: -0.03em;
+  color: #fff;
+  text-transform: uppercase;
+  overflow: visible;
+  padding: 0.06em 0 0.1em;
+  will-change: transform, opacity;
+  font-synthesis: none;
+}
+
+[data-hero-subtitle] {
+  margin-top: clamp(20px, 3.5vh, 40px);
+  will-change: transform, opacity;
+}
+
+[data-hero-subtitle] p {
+  margin: 0;
+  max-width: 52ch;
+  font-size: clamp(16px, 1.35vw, 21px);
+  line-height: 1.65;
+  font-weight: 500;
+  color: rgba(225, 215, 240, 0.88);
+}
+
+[data-hero-tags] {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0;
+  margin-top: clamp(20px, 3vh, 32px);
+  will-change: transform, opacity;
+}
+
+[data-hero-tag-dot] {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  margin: 0 14px;
+  display: inline-block;
+}
+
+[data-hero-tag] {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+  font-weight: 500;
+}
+
+[data-hero-scroll-hint] {
+  position: absolute;
+  left: 50%;
+  bottom: clamp(52px, 8vh, 72px);
+  z-index: 5;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.55);
+  text-decoration: none;
+}
+
+[data-hero-scroll-hint] > span:first-child {
+  font-size: 10px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+[data-hero-scroll-icon] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+[data-hero-ui] {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 4;
+  padding: 0 clamp(20px, 5vw, 80px) clamp(18px, 3vh, 28px);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+[data-hero-frame] {
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  color: rgba(255, 255, 255, 0.4);
+  font-variant-numeric: tabular-nums;
+  min-width: 36px;
+}
+
+[data-hero-bar-track] {
+  flex: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+[data-hero-bar] {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #ff2d78, #7c4dff);
+}
+
+[data-hero-ui-label] {
+  font-size: 10px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.32);
+}
+
+@media (min-width: 881px) {
+  [data-hero-inner] {
+    padding-top: clamp(96px, 12vh, 140px);
+    padding-bottom: clamp(96px, 12vh, 128px);
+  }
+
+  [data-hero-title-1] {
+    font-size: clamp(52px, 6.8vw, 128px);
+  }
+
+  [data-hero-title-2] {
+    font-size: clamp(72px, 12.8vw, 280px);
+    letter-spacing: -0.035em;
+    line-height: 0.92 !important;
+  }
+
+  [data-hero-subtitle] p {
+    font-size: clamp(17px, 1.25vw, 22px);
+    max-width: 48ch;
+  }
+
+  [data-hero-tags] {
+    margin-top: clamp(24px, 3.5vh, 40px);
+  }
+}
+
+@media (min-width: 1280px) {
+  [data-hero-title-1] {
+    font-size: clamp(64px, 7.2vw, 140px);
+  }
+
+  [data-hero-title-2] {
+    font-size: clamp(96px, 13.5vw, 300px);
+  }
+}
+
+@media (min-width: 1600px) {
+  [data-hero-inner] {
+    padding-inline: clamp(48px, 5vw, 96px);
+  }
+}
+
 /* ── Hero mobile ── */
 @media (max-width: 880px) {
   [data-scene="hero"] {
     height: 190vh !important;
+  }
+
+  [data-hero-sticky] {
+    justify-content: center !important;
+  }
+
+  [data-hero-inner] {
+    padding: 0 clamp(20px, 5vw, 28px) clamp(96px, 14vh, 128px) !important;
   }
 
   [data-hero-content] {
@@ -273,7 +509,6 @@ button {
     flex-direction: column !important;
     align-items: flex-start !important;
     text-align: left !important;
-    padding-bottom: clamp(96px, 14vh, 128px) !important;
     max-width: 100% !important;
   }
 
@@ -290,7 +525,7 @@ button {
     max-width: 100% !important;
   }
 
-  [data-hero-title-1] span {
+  [data-hero-title-1] .hero-title-gradient {
     background: none !important;
     -webkit-text-fill-color: #ff2d78 !important;
     color: #ff2d78 !important;
@@ -323,7 +558,7 @@ button {
   [data-hero-ui] {
     bottom: max(14px, env(safe-area-inset-bottom)) !important;
     gap: 10px !important;
-    padding: 0 16px clamp(14px,3vw,20px) !important;
+    padding: 0 16px clamp(14px, 3vw, 20px) !important;
   }
 
   [data-hero-scroll-hint] {
@@ -378,6 +613,14 @@ button {
 }
 
 /* ── Strength section ── */
+@media (min-width: 881px) {
+  [data-strength-sticky] {
+    position: sticky;
+    top: 140px;
+    align-self: start;
+  }
+}
+
 @media (max-width: 880px) {
   [data-section="strength"] {
     padding: 64px 16px 72px !important;
@@ -390,10 +633,10 @@ button {
     gap: 28px !important;
   }
 
-  [data-strength-grid] > div:first-child {
-    position: sticky !important;
-    top: 76px !important;
-    z-index: 2;
+  [data-strength-sticky] {
+    position: relative !important;
+    top: auto !important;
+    z-index: auto !important;
   }
 
   [data-strength-grid] h2 {
