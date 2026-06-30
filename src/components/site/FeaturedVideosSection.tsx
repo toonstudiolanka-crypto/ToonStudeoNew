@@ -25,7 +25,7 @@ export function FeaturedVideosSection({ videos }: Props) {
 
   return (
     <>
-      <section id="featured" data-hscroll style={{ position: "relative", height: "300vh", background: "#0B0B0C" }}>
+      <section id="featured" data-hscroll className="ts-hscroll-scene ts-hscroll-scene--featured" style={{ position: "relative", background: "#0B0B0C" }}>
         <div
           data-hscroll-sticky
           style={{

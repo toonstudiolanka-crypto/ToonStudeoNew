@@ -1,12 +1,12 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
+import { applyDocumentMotionFlags } from "@/lib/device-motion";
 
 export function useSiteUi(rootRef: React.RefObject<HTMLElement | null>) {
-  const rafRef = useRef<number>(0);
-
   useEffect(() => {
     let cancelled = false;
+    let teardown: (() => void) | undefined;
 
     const init = () => {
       if (cancelled) return;
@@ -16,6 +16,7 @@ export function useSiteUi(rootRef: React.RefObject<HTMLElement | null>) {
         return;
       }
 
+      const { lowPower } = applyDocumentMotionFlags();
       const $$ = (s: string) => Array.from(root.querySelectorAll(s));
       const $ = (s: string) => root.querySelector(s);
 
@@ -60,13 +61,16 @@ export function useSiteUi(rootRef: React.RefObject<HTMLElement | null>) {
       }
 
       const nav = $("[data-nav]") as HTMLElement | null;
+      let navScrolled = false;
       const onScroll = () => {
         if (!nav) return;
-        const y = window.scrollY;
-        if (y > 40) {
-          nav.style.background = "rgba(11,11,12,.72)";
-          nav.style.backdropFilter = "blur(18px)";
-          nav.style.setProperty("-webkit-backdrop-filter", "blur(18px)");
+        const scrolled = window.scrollY > 40;
+        if (navScrolled === scrolled) return;
+        navScrolled = scrolled;
+        if (scrolled) {
+          nav.style.background = lowPower ? "rgba(11,11,12,.92)" : "rgba(11,11,12,.72)";
+          nav.style.backdropFilter = lowPower ? "none" : "blur(18px)";
+          nav.style.setProperty("-webkit-backdrop-filter", lowPower ? "none" : "blur(18px)");
           nav.style.borderColor = "rgba(255,255,255,.12)";
           nav.style.borderRadius = "9999px";
         } else {
@@ -78,22 +82,19 @@ export function useSiteUi(rootRef: React.RefObject<HTMLElement | null>) {
         }
       };
 
-      const tick = () => {
-        onScroll();
-        rafRef.current = requestAnimationFrame(tick);
-      };
-      rafRef.current = requestAnimationFrame(tick);
+      window.addEventListener("scroll", onScroll, { passive: true });
+      onScroll();
 
-      return () => {
-        cancelAnimationFrame(rafRef.current);
+      teardown = () => {
+        window.removeEventListener("scroll", onScroll);
       };
     };
 
-    const cleanup = init();
+    init();
+
     return () => {
       cancelled = true;
-      cancelAnimationFrame(rafRef.current);
-      cleanup?.();
+      teardown?.();
     };
   }, [rootRef]);
 }

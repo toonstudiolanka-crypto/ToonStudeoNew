@@ -67,19 +67,23 @@
     "pressFeatures": [
       {
         "id": "press-morning-brunch",
-        "kind": "newspaper",
-        "source": "The Morning Brunch",
+        "kind": "article",
+        "source": "The Morning",
         "title": "Toon Studio on breathing new life into traditional animation",
         "byline": "By Dimithri Wijesinghe",
-        "imageUrl": "/featured/morning-brunch-newspaper.png"
+        "excerpt": "Toon Studio is an animation studio and creative agency founded by Harith and Chamith Kumarasinghe, specialising in frame-by-frame animation and creative storytelling.",
+        "imageUrl": "/featured/morning-brunch-newspaper.png",
+        "imagePosition": "left center",
+        "articleUrl": "https://www.themorning.lk/articles/136847"
       },
       {
         "id": "press-daily-mirror",
         "kind": "article",
         "source": "Daily Mirror",
-        "title": "Where is the Sri Lankan cartoon and animation industry heading to? - News Features | Daily Mirror",
+        "title": "Where is the Sri Lankan cartoon and animation industry heading to?",
         "excerpt": "From Dr. Dolittle to Tintin, ThunderCats to He-Man, and the Ninja Turtles to Scooby-Doo, Sri Lankans of all ages would recall fondly....",
-        "imageUrl": "",
+        "imageUrl": "/featured/morning-brunch-newspaper.png",
+        "imagePosition": "right center",
         "articleUrl": "https://www.dailymirror.lk/news-features/Where-is-the-Sri-Lankan-cartoon-and-animation-industry-heading-to/131-231152"
       }
     ]

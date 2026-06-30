@@ -10,74 +10,17 @@ type Props = {
   content: SiteContent;
 };
 
-function NewspaperFeature({ item }: { item: PressFeature }) {
-  return (
-    <article data-featured-press data-reveal style={{ display: "flex", flexDirection: "column", gap: 20 }}>
-      <div>
-        <div
-          style={{
-            fontSize: 12,
-            letterSpacing: ".2em",
-            textTransform: "uppercase",
-            color: "rgba(21,19,15,.45)",
-            marginBottom: 10,
-            fontWeight: 600,
-          }}
-        >
-          {item.source}
-        </div>
-        <h2
-          data-display-heading
-          style={{
-            margin: 0,
-            fontFamily: "var(--font-bricolage)",
-            fontWeight: 800,
-            fontSize: "clamp(24px,3vw,36px)",
-            lineHeight: 1.05,
-            letterSpacing: "-.02em",
-            maxWidth: "22ch",
-          }}
-        >
-          {item.title}
-        </h2>
-        {item.byline && (
-          <p style={{ margin: "12px 0 0", fontSize: 13, letterSpacing: ".12em", textTransform: "uppercase", color: "rgba(21,19,15,.5)" }}>
-            {item.byline}
-          </p>
-        )}
-      </div>
-
-      {item.imageUrl && (
-        <div
-          style={{
-            borderRadius: 16,
-            overflow: "hidden",
-            border: "1px solid rgba(21,19,15,.1)",
-            boxShadow: "0 24px 60px rgba(21,19,15,.12)",
-            background: "#fff",
-          }}
-        >
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src={item.imageUrl}
-            alt={`${item.source} feature: ${item.title}`}
-            style={{ display: "block", width: "100%", height: "auto" }}
-          />
-        </div>
-      )}
-    </article>
-  );
-}
-
-function ArticleFeature({ item }: { item: PressFeature }) {
+function PressFeatureCard({ item }: { item: PressFeature }) {
   const href = item.articleUrl || "#";
+  const preview = item.excerpt || item.byline;
 
   return (
-    <article data-featured-press data-reveal>
+    <article data-featured-press data-reveal style={{ height: "100%" }}>
       <a
         href={href}
         target="_blank"
         rel="noopener noreferrer"
+        data-press-card
         style={{
           display: "flex",
           flexDirection: "column",
@@ -89,24 +32,24 @@ function ArticleFeature({ item }: { item: PressFeature }) {
           background: "#fff",
           color: "inherit",
           textDecoration: "none",
-          transition: "transform .25s ease, box-shadow .25s ease",
-        }}
-        onMouseEnter={(e) => {
-          e.currentTarget.style.transform = "translateY(-4px)";
-          e.currentTarget.style.boxShadow = "0 28px 70px rgba(21,19,15,.14)";
-        }}
-        onMouseLeave={(e) => {
-          e.currentTarget.style.transform = "none";
-          e.currentTarget.style.boxShadow = "0 24px 60px rgba(21,19,15,.1)";
         }}
       >
         {item.imageUrl ? (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
-            src={item.imageUrl}
-            alt=""
-            style={{ width: "100%", aspectRatio: "16/10", objectFit: "cover", display: "block" }}
-          />
+          <div style={{ aspectRatio: "16/10", overflow: "hidden", background: "#f5f3ef" }}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={item.imageUrl}
+              alt={`${item.source}: ${item.title}`}
+              style={{
+                width: item.imagePosition?.includes("left") || item.imagePosition?.includes("right") ? "200%" : "100%",
+                height: "100%",
+                maxWidth: "none",
+                objectFit: "cover",
+                objectPosition: item.imagePosition || "center",
+                display: "block",
+              }}
+            />
+          </div>
         ) : (
           <div
             aria-hidden
@@ -114,43 +57,23 @@ function ArticleFeature({ item }: { item: PressFeature }) {
               aspectRatio: "16/10",
               background:
                 "linear-gradient(135deg, rgba(255,77,46,.16) 0%, rgba(47,107,255,.14) 55%, rgba(255,197,61,.12) 100%)",
-              display: "flex",
-              alignItems: "flex-end",
-              padding: 20,
             }}
-          >
-            <span
-              style={{
-                fontSize: 11,
-                letterSpacing: ".18em",
-                textTransform: "uppercase",
-                fontWeight: 700,
-                color: "rgba(21,19,15,.55)",
-                background: "rgba(255,255,255,.72)",
-                padding: "8px 12px",
-                borderRadius: 9999,
-              }}
-            >
-              {item.source}
-            </span>
-          </div>
+          />
         )}
 
-        <div style={{ padding: "clamp(20px,3vw,28px)" }}>
-          {item.imageUrl && (
-            <div
-              style={{
-                fontSize: 11,
-                letterSpacing: ".18em",
-                textTransform: "uppercase",
-                color: "rgba(21,19,15,.45)",
-                marginBottom: 12,
-                fontWeight: 600,
-              }}
-            >
-              {item.source}
-            </div>
-          )}
+        <div style={{ padding: "clamp(20px,3vw,28px)", flex: 1, display: "flex", flexDirection: "column" }}>
+          <div
+            style={{
+              fontSize: 11,
+              letterSpacing: ".18em",
+              textTransform: "uppercase",
+              color: "rgba(21,19,15,.45)",
+              marginBottom: 12,
+              fontWeight: 600,
+            }}
+          >
+            {item.source}
+          </div>
           <h2
             style={{
               margin: 0,
@@ -163,8 +86,10 @@ function ArticleFeature({ item }: { item: PressFeature }) {
           >
             {item.title}
           </h2>
-          {item.excerpt && (
-            <p style={{ margin: "14px 0 0", fontSize: 15, lineHeight: 1.6, color: "rgba(21,19,15,.68)" }}>{item.excerpt}</p>
+          {preview && (
+            <p style={{ margin: "14px 0 0", fontSize: 15, lineHeight: 1.6, color: "rgba(21,19,15,.68)", flex: 1 }}>
+              {preview}
+            </p>
           )}
           <span
             style={{
@@ -194,6 +119,7 @@ export function FeaturedPage({ content }: Props) {
   return (
     <div ref={rootRef} style={{ position: "relative", background: "#0B0B0C", minHeight: "100vh" }}>
       <div
+        data-site-grain
         aria-hidden
         style={{
           position: "fixed",
@@ -291,18 +217,14 @@ export function FeaturedPage({ content }: Props) {
               data-featured-grid
               style={{
                 display: "grid",
-                gridTemplateColumns: "1.05fr .95fr",
-                gap: "clamp(28px,4vw,48px)",
-                alignItems: "start",
+                gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
+                gap: "clamp(24px,4vw,40px)",
+                alignItems: "stretch",
               }}
             >
-              {featuredPage.pressFeatures.map((item) =>
-                item.kind === "newspaper" ? (
-                  <NewspaperFeature key={item.id} item={item} />
-                ) : (
-                  <ArticleFeature key={item.id} item={item} />
-                ),
-              )}
+              {featuredPage.pressFeatures.map((item) => (
+                <PressFeatureCard key={item.id} item={item} />
+              ))}
             </div>
           </div>
         </section>

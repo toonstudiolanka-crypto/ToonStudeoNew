@@ -21,7 +21,7 @@ export function WorkSection({ work, youtubeUrl }: Props) {
 
   return (
     <>
-      <section id="work" data-hscroll style={{ position: "relative", height: "520vh", background: "#0B0B0C", borderRadius: "34px 34px 0 0", marginTop: -34 }}>
+      <section id="work" data-hscroll className="ts-hscroll-scene ts-hscroll-scene--work" style={{ position: "relative", background: "#0B0B0C", borderRadius: "34px 34px 0 0", marginTop: -34 }}>
         <div data-hscroll-sticky style={{ position: "sticky", top: 0, height: "100vh", overflow: "hidden", display: "flex", flexDirection: "column", justifyContent: "center" }}>
           <div data-hscroll-header style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", padding: "0 clamp(20px,5vw,72px)", marginBottom: 30, flexWrap: "wrap", gap: 16 }}>
             <div>

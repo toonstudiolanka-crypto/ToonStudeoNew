@@ -3,6 +3,7 @@
 import Script from "next/script";
 import { useEffect, useRef, useState } from "react";
 import { getVimeoBackgroundEmbedUrl, getVimeoId } from "@/lib/vimeo";
+import { isLowPowerDevice } from "@/lib/device-motion";
 import { dispatchHeroVideoReady } from "@/lib/youtube-player";
 
 type Props = {
@@ -12,6 +13,7 @@ type Props = {
 type VimeoPlayer = {
   on: (event: string, cb: () => void) => void;
   play: () => Promise<void>;
+  pause: () => Promise<void>;
   getPaused: () => Promise<boolean>;
 };
 
@@ -53,7 +55,11 @@ export function HeroVimeoBackground({ url }: Props) {
     player.on("bufferend", () => setPlaying(true));
     player.on("error", markReady);
 
+    const lowPower = isLowPowerDevice();
+    const heroScene = iframeRef.current.closest('[data-scene="hero"]');
+
     const resume = async () => {
+      if (document.hidden) return;
       try {
         if (await player.getPaused()) await player.play();
       } catch {
@@ -61,13 +67,44 @@ export function HeroVimeoBackground({ url }: Props) {
       }
     };
 
-    document.addEventListener("visibilitychange", resume);
+    const pause = async () => {
+      try {
+        if (!(await player.getPaused())) await player.pause();
+      } catch {
+        // ignore
+      }
+    };
+
+    const onVisibilityChange = () => {
+      if (document.hidden) void pause();
+      else void resume();
+    };
+
+    document.addEventListener("visibilitychange", onVisibilityChange);
     window.addEventListener("focus", resume);
-    const watchdog = window.setInterval(resume, 4000);
+
+    let watchdog = 0;
+    if (!lowPower) {
+      watchdog = window.setInterval(resume, 4000);
+    }
+
+    let visibilityObserver: IntersectionObserver | undefined;
+    if (heroScene && "IntersectionObserver" in window) {
+      visibilityObserver = new IntersectionObserver(
+        (entries) => {
+          const visible = entries.some((e) => e.isIntersecting && e.intersectionRatio > 0.12);
+          if (visible) void resume();
+          else void pause();
+        },
+        { threshold: [0, 0.12, 0.35] },
+      );
+      visibilityObserver.observe(heroScene);
+    }
 
     return () => {
       window.clearInterval(watchdog);
-      document.removeEventListener("visibilitychange", resume);
+      visibilityObserver?.disconnect();
+      document.removeEventListener("visibilitychange", onVisibilityChange);
       window.removeEventListener("focus", resume);
       playerRef.current = null;
     };

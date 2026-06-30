@@ -59,6 +59,7 @@ export type PressFeature = {
   byline?: string;
   excerpt?: string;
   imageUrl: string;
+  imagePosition?: string;
   articleUrl?: string;
 };
 

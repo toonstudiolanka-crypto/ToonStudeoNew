@@ -26,6 +26,7 @@ export function CinematicSite({ content }: Props) {
   return (
     <div ref={rootRef} style={{ position: "relative", background: "#0B0B0C" }}>
       <div
+        data-site-grain
         aria-hidden
         style={{
           position: "fixed", inset: -40, zIndex: 60, pointerEvents: "none", mixBlendMode: "overlay", opacity: 0.06,
@@ -65,20 +66,20 @@ export function CinematicSite({ content }: Props) {
             {/* "The Creative Awakening" — Caveat cursive, tilted, pink-red */}
             <div data-hero-w data-hero-title-1 style={{
               fontFamily: "var(--font-caveat)",
-              fontSize: "clamp(36px,7.2vw,110px)",
+              fontSize: "clamp(40px,7.2vw,110px)",
               fontWeight: 700,
               lineHeight: 1.08,
               display: "inline-block",
               transform: "rotate(-2.5deg)",
               transformOrigin: "left center",
-              marginBottom: "0.06em",
+              marginBottom: "0.08em",
               marginLeft: "0.04em",
               paddingBottom: "0.14em",
               overflow: "visible",
               willChange: "transform,opacity",
               opacity: 1,
             }}>
-              <span style={{
+              <span className="hero-title-gradient" style={{
                 background: "linear-gradient(90deg,#FF2D78,#FF4D2E)",
                 WebkitBackgroundClip: "text",
                 backgroundClip: "text",
@@ -93,10 +94,10 @@ export function CinematicSite({ content }: Props) {
               <span data-hero-w data-hero-title-2 style={{
                 display: "block",
                 fontFamily: "var(--font-bricolage)",
-                fontSize: "clamp(48px,15vw,240px)",
+                fontSize: "clamp(52px,15vw,240px)",
                 fontWeight: 800,
                 lineHeight: 0.98,
-                letterSpacing: "-0.03em",
+                letterSpacing: "-0.025em",
                 color: "#fff",
                 paddingBlock: "0.05em",
                 overflow: "visible",
@@ -110,15 +111,16 @@ export function CinematicSite({ content }: Props) {
 
             {/* Subtitle */}
             <div data-hero-fade data-hero-subtitle style={{
-              marginTop: "clamp(28px,4.5vh,52px)",
+              marginTop: "clamp(24px,4vh,48px)",
               willChange: "transform,opacity",
             }}>
               <p style={{
                 margin: 0,
-                maxWidth: "44ch",
-                fontSize: "clamp(15px,1.45vw,20px)",
-                lineHeight: 1.55,
-                color: "rgba(210,200,230,.78)",
+                maxWidth: "46ch",
+                fontSize: "clamp(16px,1.45vw,20px)",
+                lineHeight: 1.6,
+                fontWeight: 500,
+                color: "rgba(220,210,240,.85)",
               }}>
                 {hero.subtitle}
               </p>
