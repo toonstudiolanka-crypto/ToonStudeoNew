@@ -10,12 +10,13 @@ Use these values in **hPanel → Websites → your site → Settings & Redeploy*
 | **Node.js version** | **20.x** |
 | **Install command** | `npm ci` |
 | **Build command** | `npm run build` |
-| **Start command** | `npm run start -- -H 0.0.0.0 -p $PORT` |
+| **Start command** | `npm start` |
 | **Output directory** | `.next` |
-| **Entry file** | *(leave blank — required when Framework = Next.js)* |
+| **Entry file** | `server.js` |
 
-> The `start` script in package.json is simply `next start`.
-> Hostinger appends `-H 0.0.0.0 -p $PORT` at runtime via the Start command field above.
+> The `start` script in package.json runs `node server.js`.
+> `server.js` binds to `0.0.0.0` and reads `PORT` from the environment (set automatically by Hostinger).
+> Do **not** pass `-H` / `-p` flags in the Start command — they are ignored by `node server.js`.
 
 ## Environment variables
 
@@ -37,8 +38,9 @@ Use these values in **hPanel → Websites → your site → Settings & Redeploy*
 Open **Settings & Redeploy** and confirm every field matches the table above.
 Common mistakes:
 - Node.js left at **18.x** instead of **20.x**
-- Start command blank or wrong (must include `-H 0.0.0.0 -p $PORT`)
-- Entry file set to `server.js` when Framework = Next.js (leave Entry file blank)
+- Start command blank, `next start`, or `npm run start -- -H 0.0.0.0 -p $PORT` (use **`npm start`**)
+- Entry file left blank (must be **`server.js`**)
+- `ADMIN_PASSWORD` or `SESSION_SECRET` (32+ chars) missing from Environment Variables
 
 ### Step 2 — Read the deployment log
 
@@ -67,7 +69,22 @@ https://bisque-albatross-265429.hostingersite.com/api/health
 | `{"ok":true,...}` | App is running — deployment is working |
 | 503 | App is still not starting — see Step 5 |
 
-### Step 5 — Still 503 after all steps?
+### Step 5 — Custom domain (e.g. toonstudiolk.com) shows 503 but the preview URL works?
+
+The Hostinger preview URL must work first:
+
+```
+https://bisque-albatross-265429.hostingersite.com/api/health
+```
+
+If that returns `{"ok":true,...}` but your custom domain does not:
+
+1. hPanel → **Websites** → your Node.js site → **Domains** → add `toonstudiolk.com` and `www.toonstudiolk.com`
+2. Point DNS **A records** for `@` and `www` to the IP shown in hPanel for this website (use Hostinger’s value — do not guess)
+3. Wait for DNS/SSL to finish (can take up to a few hours), then **Redeploy**
+4. Test `https://toonstudiolk.com/api/health` — same JSON as the preview URL means the domain is wired correctly
+
+### Step 6 — Still 503 after all steps?
 
 Go to hPanel → **Log files** (or ask Hostinger support for **stderr / runtime logs**).
 Paste the last 30 lines here so the exact crash reason can be diagnosed.
