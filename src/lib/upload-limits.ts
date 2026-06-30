@@ -11,7 +11,7 @@ export const VIDEO_MIME_TYPES = [
   "video/quicktime",
 ] as const;
 
-export const IMAGE_MAX_BYTES = 5 * 1024 * 1024; // 5 MB
+export const IMAGE_MAX_BYTES = 512 * 1024; // 512 KB
 export const VIDEO_MAX_BYTES = 20 * 1024 * 1024; // 20 MB
 
 export const IMAGE_ACCEPT = ".jpg,.jpeg,.png,.webp,.gif,image/jpeg,image/png,image/webp,image/gif";
@@ -29,7 +29,7 @@ export function formatUploadSize(bytes: number): string {
 
 export function uploadHint(kind: UploadMediaKind): string {
   if (kind === "image") {
-    return `JPG, PNG, WebP, or GIF · max ${formatUploadSize(IMAGE_MAX_BYTES)} · best under 1 MB`;
+    return `JPG, PNG, WebP, or GIF · max ${formatUploadSize(IMAGE_MAX_BYTES)}`;
   }
   if (kind === "video") {
     return `MP4, WebM, or MOV · max ${formatUploadSize(VIDEO_MAX_BYTES)} · keep under 20 MB`;
